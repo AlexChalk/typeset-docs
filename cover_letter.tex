@@ -1,53 +1,51 @@
-\documentclass[12pt,stdletter,addrfromright,orderfromtodate,sigleft]{newlfm}
-\usepackage{blindtext, etoolbox}
+\documentclass[12pt]{article}
+
 \usepackage{fontspec}
 \setmainfont{Charter}
+\usepackage{lipsum}
 
+% Docs: http://www.texdoc.net/texmf-dist/doc/latex/geometry/geometry.pdf
+\usepackage[paper=letterpaper,%
+margin=1.4in,top=1.2in,bottom=1.2in,%
+includeheadfoot]{geometry}
 
-\makeatletter
-% https://tex.stackexchange.com/questions/377454/undefined-control-sequence-error-on-fancyreset-fncyolh-and-fncyorh-when-u
-\patchcmd{\@zfancyhead}{\fancy@reset}{\f@nch@reset}{}{}
-\patchcmd{\@set@em@up}{\f@ncyolh}{\f@nch@olh}{}{}
-\patchcmd{\@set@em@up}{\f@ncyolh}{\f@nch@olh}{}{}
-\patchcmd{\@set@em@up}{\f@ncyorh}{\f@nch@orh}{}{}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.9\baselineskip plus 2pt minus 1pt}
 
-% https://tex.stackexchange.com/questions/497642/how-to-right-align-the-addrfrom-phonefrom-and-emailfrom-in-the-newlfm-class
-\patchcmd{\openlfm}{%
-  \noindent%
-  \begin{tabular}{l@{}}%
-}{%
-  \noindent%
-  \begin{tabular}{r@{}}%
-}{}{\error}
-\makeatother
+\pagestyle{empty}% Don't place anything (e.g. page #) in the header/footer
 
-% Docs: https://mirror.its.dal.ca/ctan/macros/latex/contrib/newlfm/newlfm.pdf
-\newlfmP{Headlinewd=0pt,Footlinewd=0pt}
-\newlfmP{addrfromskipafter=20pt}
-\newlfmP{dateskipbefore=0pt}
-\newlfmP{sigsize=0pt}
-\newlfmP{sigskipbefore=50pt}
-\newlfmP{greettoskipafter=24pt}
-\leftmarginsize{1.4in}\rightmarginsize{1.4in}
-\newlfmP{headermarginsize=70pt}
-
-\namefrom{Alexander Chalk}
-\addrfrom{
-    7-6575 Rue Saint-Urbain\\
-    Montréal, QC, H2S 3G6\\
-    Canada
+\newcommand{\fromperson}{Alexander Chalk}
+\newcommand{\toperson}{To whom it may concern,}
+\newcommand{\fromaddress}{
+  7-6575 Rue Saint-Urbain\\
+  Montréal, QC, H2S 3G6\\
+  Canada
 }
-\addrto{}
-\greetto{To Whom It May Concern,}
-\closeline{Yours sincerely,}
-% \dateset{26th November 2020}
- 
+
 \begin{document}
-\begin{newlfm}
-\blindtext
 
-% \vspace{0mm} More space between paragraphs
+\begin{flushright}
+  \fromaddress
+\end{flushright}
 
-\blindtext
-\end{newlfm}
+\smallskip
+
+\rightline{\today}
+
+\bigskip
+
+\toperson
+
+\smallskip
+
+\lipsum[1-2] % Letter goes here ;)
+
+\bigskip
+
+Yours sincerely,
+
+\vspace{1\baselineskip}
+
+\fromperson
+
 \end{document}
