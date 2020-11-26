@@ -1,0 +1,53 @@
+\documentclass[12pt,stdletter,addrfromright,orderfromtodate,sigleft]{newlfm}
+\usepackage{blindtext, etoolbox}
+\usepackage{fontspec}
+\setmainfont{Charter}
+
+
+\makeatletter
+% https://tex.stackexchange.com/questions/377454/undefined-control-sequence-error-on-fancyreset-fncyolh-and-fncyorh-when-u
+\patchcmd{\@zfancyhead}{\fancy@reset}{\f@nch@reset}{}{}
+\patchcmd{\@set@em@up}{\f@ncyolh}{\f@nch@olh}{}{}
+\patchcmd{\@set@em@up}{\f@ncyolh}{\f@nch@olh}{}{}
+\patchcmd{\@set@em@up}{\f@ncyorh}{\f@nch@orh}{}{}
+
+% https://tex.stackexchange.com/questions/497642/how-to-right-align-the-addrfrom-phonefrom-and-emailfrom-in-the-newlfm-class
+\patchcmd{\openlfm}{%
+  \noindent%
+  \begin{tabular}{l@{}}%
+}{%
+  \noindent%
+  \begin{tabular}{r@{}}%
+}{}{\error}
+\makeatother
+
+% Docs: https://mirror.its.dal.ca/ctan/macros/latex/contrib/newlfm/newlfm.pdf
+\newlfmP{Headlinewd=0pt,Footlinewd=0pt}
+\newlfmP{addrfromskipafter=20pt}
+\newlfmP{dateskipbefore=0pt}
+\newlfmP{sigsize=0pt}
+\newlfmP{sigskipbefore=50pt}
+\newlfmP{greettoskipafter=24pt}
+\leftmarginsize{1.4in}\rightmarginsize{1.4in}
+\newlfmP{headermarginsize=70pt}
+
+\namefrom{Alexander Chalk}
+\addrfrom{
+    7-6575 Rue Saint-Urbain\\
+    Montréal, QC, H2S 3G6\\
+    Canada
+}
+\addrto{}
+\greetto{To Whom It May Concern,}
+\closeline{Yours sincerely,}
+% \dateset{26th November 2020}
+ 
+\begin{document}
+\begin{newlfm}
+\blindtext
+
+% \vspace{0mm} More space between paragraphs
+
+\blindtext
+\end{newlfm}
+\end{document}
