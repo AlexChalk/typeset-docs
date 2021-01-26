@@ -1,0 +1,92 @@
+\documentclass{edelgas-resume}
+
+\setmainfont[
+ Ligatures=TeX,
+ BoldFont={Charter Bold}, 
+ ItalicFont={Charter Italic},
+ BoldItalicFont={Charter Bold Italic},
+ ]{Charter}
+
+\setsansfont[
+ Ligatures=TeX,
+ BoldFont={Charter Bold}, 
+ ItalicFont={Charter Italic},
+ BoldItalicFont={Charter Bold Italic},
+ Scale=MatchLowercase
+]{Charter}
+
+%Custom Variables
+\newcommand*{\name}{Alex Chalk} 
+\newcommand*{\github}{github.com/AlexChalk} 
+\pagestyle{empty} % Removes page number
+
+
+%if desired, this will create a really nice customized footer
+\newcommand{\foot}{
+%{\name} --- \thepage\ of \pageref{LastPage}
+Alex Résumé --- Page \thepage\ of \pageref{LastPage}
+}
+
+\begin{document}
+%Header
+\namehead%prints your name
+\githubhead%prints your github handle
+\address{7-6575 Rue Saint-Urbain, Montréal (QC) H2S 3G6, Canada}{+1 514 549-5327}{contact@alexchalk.net}
+
+
+% Programmer Bio
+\sectionheading{Sommaire}
+\vspace{-1.8em}
+{\fontsize{10}{15}\selectfont{\setlength{\parindent}{0pt}\justify{Je suis axé sur les données. Les objectifs sociaux à grande portée sont ma principale source de motivation. Je suis le développeur ayant réalisé l'intégration EBANX la plus rapide. J'ai même battu Spotify! « Aller vite et casser des choses » n'est pas mon fort. J'adore tmux, vim et la programmation fonctionnelle. J'étais autrefois rédacteur; j'écris de bons READMEs!\par}}}
+\vspace{1em}
+
+
+%Business Experience
+\sectionheading{Expérience Professionnelle}
+
+\organization{Busbud}{Montréal, Canada}{2018--20}
+\begin{position}{Développeur Fullstack}{}
+	\item Node.js, TypeScript, PostgreSQL, RabbitMQ, Kubernetes, Terraform, Docker
+  \item Intégration de l'offre, outils, fonctionnalités post-achat et paiement, planification
+  \item Le plus grand inventaire de voyages par autobus, des millions d'utilisateurs annuels
+
+\end{position}
+
+\organization{Roof Ai}{Montréal, Canada}{2017--18}
+\begin{position}{Développeur Fullstack}{}
+\item Webpack, React, Redux, MongoDB, Express.js
+\item Automatisation de conversations exécutées par des chatbots, secteur immobilier
+
+\end{position}
+
+
+\organization{Makers Academy}{Londres, Royaume-Uni (à distance)}{2017}
+\begin{position}{Étudiant à temps plein}{}
+\item TDD, pair programming, Agile/Scrum, principes OOP et SOLID, Ruby, Javascript
+\item Le « bootcamp » le plus sélectif d'Europe; programme intensif de 16 semaines
+
+\end{position}
+
+\organization{Growth Compass Inc.}{Wakefield, Canada (à distance)}{2015--17}
+\begin{position}{Éditeur et rédacteur}{}
+\item Recherche et rédaction de contenu écrit dans le cadre de campagnes ciblées
+\item Services-conseils en marketing auprès d'entreprises d'ingénierie et de technologie
+
+\end{position}
+
+
+%Education
+\sectionheading{Formation}
+
+\organization{Université d'Oxford}{Oxford, Royaume-Uni}{2011--14}
+\begin{position}{B.A. Philosophy and Theology}{}
+\item Diplômé ayant obtenu la note la plus élevée du \emph{First Class} (MPC 4.0)
+\item Boursier de chorale avec le chœur de la chapelle du Mansfield College
+\end{position}
+
+%Skills
+\sectionheading{Other}
+\vspace{-1em}
+Fait partie du Chœur de l'Église St Andrew and St Paul.\hfill{\itshape{Références fournies sur demande.}}
+
+\end{document}

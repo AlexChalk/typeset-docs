@@ -47,6 +47,8 @@
 \par
 \vspace{0.3em}
 \addressfont{Phone: \MakeUppercase{#2 \hspace{1em}} Email: \MakeUppercase{#3}}
+% Use instead for french
+% \addressfont{Tél. : \MakeUppercase{#2 \hspace{1em}} Courriel : \MakeUppercase{#3}}
 \par
 \vspace{1.25em}
 }
